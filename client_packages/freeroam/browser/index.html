@@ -3,7 +3,10 @@
 <head>
     <title></title>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/drag.js"></script>
@@ -13,19 +16,12 @@
 <body>
     <div id="wrapper" style="display: none;">
         <div class="left_menu">
-            <h1>GENERAL</h1>
-            <div class="btn" id="help" data-child="#help_window">HELP</div>
-            <div class="btn" onclick="mp.trigger('cefData', 'kill');">SUICIDE</div>
-            <div class="btn" id="skins" data-child="#skins_window">SKINS</div>
-            <div class="btn" id="vehicles" data-child="#vehicles_window">VEHICLES</div>
-            <div class="btn" id="weapon" data-child="#weapon_window">WEAPON</div>
-
-            <div id="vehicle_buttons" style="display: none;">
-                <h1>VEHICLE</h1>
-                <div class="btn" onclick="mp.trigger('cefData', 'fix');">REPAIR</div>
-                <div class="btn" onclick="mp.trigger('cefData', 'flip');">FLIP</div>
-                <div class="btn" data-child="#color_window">COLOR</div>
-            </div>
+            <div class="btn" id="help" data-child="#help_window"><i class="fa fa-question fa-2x"></i>Help</div>
+            <div class="btn" onclick="mp.trigger('cefData', 'kill');"><i class="fa fa-times fa-2x"></i>Suicide</div>
+            <div class="btn" id="skins" data-child="#skins_window"><i class="fa fa-users fa-2x"></i>Skins</div>
+            <div class="btn" id="vehicles" data-child="#vehicles_window"><i class="fa fa-car fa-2x"></i>Vehicles</div>
+            <div class="btn" id="weapon" data-child="#weapon_window"><i class="fa fa-bomb fa-2x"></i>Weapons</div>
+            <div class="btn" id="vehicle_link" data-child="#vehicle_buttons" style="display: none;"><i class="fa fa-sliders"></i>Vehicle Options</div>
         </div>
     </div>
 
@@ -33,7 +29,7 @@
     <div class="draggable_window" id="help_window" data-visible="false" data-movable="true">
         <div class="window_header">
             Help
-            <div class="close_window">X</div>
+            <div class="close_window"><i class="fa fa-window-close"></i></div>
         </div>
 
         <div class="window_body">
@@ -59,7 +55,7 @@
     <div class="draggable_window" id="skins_window" data-visible="false" data-movable="true">
         <div class="window_header">
             Select skin
-            <div class="close_window">X</div>
+            <div class="close_window"><i class="fa fa-window-close"></i></div>
         </div>
 
         <div class="window_body">
@@ -70,10 +66,23 @@
     <div class="draggable_window" id="vehicles_window" data-visible="false" data-movable="true">
         <div class="window_header">
             Select vehicle
-            <div class="close_window">X</div>
+            <div class="close_window"><i class="fa fa-window-close"></i></div>
         </div>
 
         <div class="window_body">
+        </div>
+    </div>
+
+    <div class="draggable_window" id="vehicle_buttons" data-visible="false" data-movable="true">
+        <div class="window_header">
+            Vehicle Options
+            <div class="close_window"><i class="fa fa-window-close"></i></div>
+        </div>
+
+        <div class="window_body">
+            <div class="btn" onclick="mp.trigger('cefData', 'fix');">Repair</div>
+            <div class="btn" onclick="mp.trigger('cefData', 'flip');">Flip</div>
+            <div class="btn" data-child="#color_window">Color</div>
         </div>
     </div>
 
@@ -81,7 +90,7 @@
     <div class="draggable_window" id="color_window" data-visible="false" data-movable="true">
         <div class="window_header">
             Select color
-            <div class="close_window">X</div>
+            <div class="close_window"><i class="fa fa-window-close"></i></div>
         </div>
 
         <div class="window_body">
@@ -97,7 +106,7 @@
     <div class="draggable_window" id="weapon_window" data-visible="false" data-movable="true">
         <div class="window_header">
             Select weapon
-            <div class="close_window">X</div>
+            <div class="close_window"><i class="fa fa-window-close"></i></div>
         </div>
 
         <div class="window_body">

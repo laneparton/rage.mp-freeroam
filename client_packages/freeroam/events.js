@@ -11,14 +11,14 @@ exports = function(menu) {
 
     // Hide vehicle buttons, when player exits vehicle (triggered from server, will be fixed on the client-side).
     function hideVehicleButtons() {
-        menu.execute('$("#vehicle_buttons").fadeOut(250);');
+        menu.execute('$("#vehicle_link").fadeOut(250);');
     }
-    mp.events.add('playerExitVehicle', hideVehicleButtons);
+    mp.events.add('playerLeaveVehicle', hideVehicleButtons);
     mp.events.add('hideVehicleButtons', hideVehicleButtons);
 
     // Show vehicle buttons, when player enters vehicle (triggered from server, will be fixed on the client-side).
-    mp.events.add('playerEnteredVehicle', () => {
-        menu.execute('$("#vehicle_buttons").fadeIn(250);');
+    mp.events.add('playerEnterVehicle', () => {
+        menu.execute('$("#vehicle_link").fadeIn(250);');
     });
 
     // Change chat activity.

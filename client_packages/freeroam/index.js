@@ -10,6 +10,8 @@ let skinsinit    = require('./freeroam/menu_initialization/skins.js');
 let weaponInit   = require('./freeroam/menu_initialization/weapon.js');
 let playersInit  = require('./freeroam/menu_initialization/players.js');
 
+mp.gui.chat.safeMode = false;
+
 // Creating browser.
 mp.events.add('guiReady', () => {
     if (!menu) {

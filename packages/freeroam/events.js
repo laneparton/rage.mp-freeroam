@@ -1,16 +1,11 @@
 let skins       = require('./configs/skins.json').Skins;
 let spawnPoints = require('./configs/spawn_points.json').SpawnPoints;
 
-/* !!! REMOVE AFTER FIX (TRIGGERED FROM SERVER) !!! */
-mp.events.add('playerEnteredVehicle', (player) => {
-    if (player.vehicle && player.seat === 0 || player.seat === 255)
-        player.call('playerEnteredVehicle');
-});
-/* */
+ function playerExitVehicleHandler(player, vehicle) {
+    player.call('hideVehicleButtons');
+  }
 
-mp.events.add('playerExitVehicle', (player) => {
-    player.call('playerExitVehicle');
-});
+mp.events.add('playerExitVehicle', playerExitVehicleHandler);
 
 mp.events.add('playerJoin', (player) => {
     player.customData = {};
